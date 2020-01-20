@@ -1,0 +1,404 @@
+@charset "UTF-8";
+/* ファイル先頭に上記を書くと文字化け防止 */
+/* カラー */
+main {
+  /* テーブル罫線 */
+  color: #bfbfbf;
+  /* footer */
+  color: #707070;
+  /* グレー背景 */
+  color: #fafafa;
+  /* 黒文章 */
+  color: #222222;
+  /* ボタン */
+  color: #ffd61a;
+  color: crimson;
+}
+
+/* 要素の横並びflexbox：justify-contentは横方向制御、align-itemsは縦方向制御 */
+main {
+  display: flex;
+  justify-content: space-around;
+  align-items: center
+}
+/* 要素中央揃え：幅の決まっているもののとき */
+main {
+  margin: 0 auto;
+}
+/* 背景画像の設定＋中の文字中央揃え */
+main {
+  background:beige;
+  width: 100%;
+  height: 370px;
+  margin: 0 auto;
+  /* -image部分省略可 */
+  background-image: url(./kadai/01.jpg);
+  /* 画像中央を起点縦50％横50%ブラウザが動いても合せてくれる */
+  background-position:50% 50%;
+  /* cover縦横比保持したままなるべく大表示 */
+  background-size: cover;
+  /* 背景画像をスマホ画面に合わせる */
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+/* 画像をボックスにフィットさせるwidthを100%でheight指定 */
+img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+}
+
+/* よくある間違い！セミコロン忘れ、CSSとhtml両方保存忘れ */
+
+/* 一般
+クラスは複数要素で同じ可能、idはユニーク、*{}は全ての要素指定
+paddingとmarginは上右下左の順番
+セレクター > セレクターは直下のみの要素の意味、スペースは子要素の全て
+優先度：color:red; !important > 詳細度 */
+
+/* 文字要素まとめ
+color:black;
+font-size:20px; font-weight:bold/normal;
+font-family:verdana, arial, "Arial Black", メイリオ, sans-serif;
+text-align:right/center/left;
+text-decoration:none/underline/line-through; */
+
+/* 色、Hue色相 Saturation彩度 Lightness明度、alpha透明度
+hsla(%, %, %, 0.0~1.0); opacity: 0.0~1.0
+ちょっと明るい黒　color:#333 */
+
+/* line height、overflowの指定、line heightはfontsizeを含めたサイズ */
+p {
+  /* 文章が長くなってもはみ出ないように hidden/scroll */
+  overflow: scroll;
+  line-height: 32px;
+  /* emは文字分という意味 */
+  line-height: 2em;
+  /* 省略も可能 */
+  line-height: 1;
+  font-size: 16px;}
+
+/* 全体フォント、余白をブラウザ比率で指定 */
+body{
+  /* 余白を1-％で指定 */
+  width:98%; 
+  margin:10px auto;
+  /* スペースが入るフォント名は””で囲う！ */
+  font-family: メイリオ, verdana, "Arial Black", sans-serif;}
+
+/* ヘッダー背景設定 */
+header{
+  position:relative;
+  width:100%;
+  height:200px; padding:0px; margin:0 auto;
+  background-color: white;
+  /* -image部分省略可 */
+  background-image:url(./img/header.png);
+  /* cover縦横比保持したままなるべく大表示 */
+  background-size:cover;
+  /* 背景画像をスマホ画面に合わせる */
+  background-size: 100% auto;
+  /* 画像中央を起点縦50％横50%ブラウザが動いても合せてくれる */
+  background-position:50% 50%;
+  font-weight:bold; color:red;}
+
+/* リンクの自動的につく下線を消す */
+nav a{
+  text-decoration:none;
+  /* 親要素のカラー指定を引き継がせる */
+  color:inherit;}
+
+/* 疑似クラス、マウスを当てるときに色が変わる、透明度 */
+nav a:hover{
+  color:royalblue; opacity: 0.8;}
+
+/* リス記号disc/circle/lower-alpha小文字アルファード順/none、横並びにする、下線ボーダーdotted/solid */
+header ul{
+  /* 直後要素をなかったものとし高さが同じに浮かせて表示 */
+  float: left;
+  list-style-type:circle;
+  /* 画像をリスト記号したい場合 */
+  list-style-image:url(../img/icon.png);
+  /* 改行時リスト記号を内側にしたい場合 */
+  list-style-position:inside;
+  /* まとめて書くこともできる */
+  list-style: circle inside url(../img/icon.png);
+  margin:0px 0 0 6px; padding:0;}
+
+/* リストを横ならび */
+header li{
+  /* 横並びにする、リスト記号がつかなくなる */
+  display:inline-block;
+  /* 上下、左右をそれぞれまとめて指定できる */
+  padding:0px 4px;
+  /* padding-left:4px; padding-right:4px;  */
+  border-bottom: 2px solid royalblue;
+  font-size:12px;}
+
+/* 元々リンクでない要素、クリックできると分かるように */
+#open_menu{
+  cursor:pointer; 
+  float: right;
+  /* padding-top:3px; */
+  font-size:20px;}
+
+/* 擬似要素before after */
+.sub-1::after{
+  /* サブタイトル属性を使う宣言 */
+  /* content:"hello"; */
+  /* htmlで指定 */
+  content:attr(data-subtitle);
+  /* サブタイトルの下に配置するため */
+  display: block;
+  font-size: 12px;
+  /* ライトグレー */
+  color:#aaa;
+  padding-top: 2px}
+
+
+  /* vertical alignの設定  */
+h1 i{
+  /* top/bottom/middleは文字の中央と画像の中央が合わせられる */
+  /* pixel指定はbaselineからの離れ具合、-5px, 5px */
+  vertical-align: -20px;
+  color: orange;}
+
+header img{
+  /* 画像を絶対配置 */
+  /* headerで「position: relative;」と指定した上！ */
+  position: absolute;
+  /* 例えばheaderに対して常に右下に配置したい場合 */
+  bottom:10px;
+  right:10px;
+}
+/* 画像が大きすぎても画面幅に合わせる */
+.mypic{
+  width:100%;
+}
+/* idの指定方法 */
+
+.feat-1 img{
+  width:100%;
+}
+
+.feat-1{
+  /* 文章が長くなってもレイアウト崩れないようfloat解除 */
+  overflow: hidden;
+  /* 薄いグレー */
+  background: #f8f8f8;
+  /* widthを指定すれば文章が変に広がらない */
+  /* width:820px; */
+  /* 幅指定しているため普通にtext-alignで指定しても効果ない！
+  左右autoにすることによって結果中央揃え！ */
+  margin:0 auto;
+}
+/* クラス間は必ずスペースを！ */
+.feat-1 .desc-1{
+  width:360px;
+}
+.feat-1:nth-of-type(odd) .desc-1{
+  float:right;
+  padding-left: 40px;
+}
+.feat-1:nth-of-type(even) .desc-1{
+  float:left;
+  padding-right: 40px;
+}
+
+/* nth child、nth-of-typeの場合は同じタイプのタグでなくてもOK */
+.feat-1:not(:last-child){
+  /* 最後の要素だけ適用しない */
+  /* :nth-child(3)、倍数:nth-child(3n)、:nth-child(odd)、:nth-child(even)、:first-child、:last-child、not(:last-child) */
+  margin-bottom:60px;}
+
+/* flexbox、w3c団体、caniuse.com */
+.voice-s .flex-box{
+  /* flexboxを使う宣言 */
+  display:flex;
+  /* rowはデフォルト、column、row-reverse、column-reverse */
+  /* 行と列のどちらかをmain axisにするか */
+  flex-direction: row;
+  /* 子要素を横一列Wrapしない */
+  flex-wrap: nowrap;
+  /* まとめて指定 */
+  flex-flow: row nowrap;
+  /* space-betweenは要素間のスペースを等間隔、左揃flex-start、右flex-end、center */
+  /* space-aroundは余白も含めて均等配置 */
+  justify-content: space-between;
+  /* justify-content: space-around; */
+  /* 折り返しボックスがある場合 */
+  /* align-items行単位、 cross-axis版justify-content*/
+  /* 複数行まとめて設定する場合はalign content */}
+.voice-s{
+  background:navy;
+  padding: 30px 30px;}
+
+/* ボックスの中のボックスの配置box-sizing */
+.voice-0 {
+  /* 親要素に対しての割合で設定 */
+  width: 30%;
+  position: relative;
+  /* paddingとborderを幅と高さに含める */
+  box-sizing: border-box;
+  /* flexboxでの位置を個別指定 */
+  /* align-self:flex-end; */
+  /* 順番の指定 */
+  /* order:1; */
+  padding:60px 40px 45px;
+  background: orange;}
+
+.voice-0 img {
+  border-radius: 50%;
+  border: 10px solid black;
+  /* 画像をFlexbox内で絶対配置、中央揃えの指定 */
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  /* 画像を上にずらす */
+  top:-60px;
+}
+
+/* .container-1{
+  width: 820px;
+margin: 0 auto;
+padding: 0;
+} */
+
+/* 属性セレクタ、""はなくてもOK */
+/* input box <input type="submit" value="送信">タグに対する指定、inputと[との間はスペースなし！ */
+/* a[href前方一致^="https"] */
+/* a[href後方一致$="com"] */
+/* a[href含む*="taguchi"] */
+input[type="text"], input[type=submit]{
+  border-radius:40px;}
+
+/* 自製ボタン、float/clear、ボックス影 */
+.btn-1{
+  float:right;
+  /* 直前floatした要素と重ならないよう */
+  clear:right;
+  padding: 5px;
+  /* position: absolute; top:25px; left:2px; */
+  /* ボタン丸める操作 */
+  border-radius: 5px;
+  /* x方向、y方向、ぼかし距離、広がり距離 */
+  box-shadow: 0px 3px 5px 1px rgb(0, 128, 79);
+  opacity:0.6;
+  background: navy; color:white; text-align: center; font-size:12px;}
+.btn-1:hover{
+    opacity:1.0;}
+
+/* display propertの例 */
+.box1 {
+  display: block;
+  width: 50px; height: 50px;
+  background-color: orange;}
+.box2 {
+  display: inline;
+  /* inlineの場合width/height指定できない！ */
+  /* width: 50px; height: 50px; */
+  background-color: skyblue;}
+.box3 {
+  display: inline-block;
+  /* display: none; */
+  width: 50px; height: 50px;
+  background-color: tomato;}
+.box4 {
+  /* スクロールしても位置が変わらない（absoluteは変わる）、ブラウザを起点 */
+  position: fixed; bottom:30px; left:30px;
+  /* display: none; */
+  width: 50px; height: 50px;
+  background-color: magenta;}
+.box5 {
+  /* 順番的に通常位置を起点 */
+  position: relative; top:10px; left:10px;
+  /* absoluteは親要素がrelativeであれば親要素に対しての配置できる */
+  /* display: none; */
+  width: 50px; height: 50px;
+  background-color: lime;}
+
+/* 重なり順の操作、position:static以外が対象z-index番号大きい方が前、既定はゼロ */
+.box6 {
+  background-color: orange;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50px; height: 50px;
+  z-index: 2;}
+.box7 {
+  background-color: skyblue;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  width: 50px; height: 50px;
+  z-index: 1;}
+.box8 {
+  background-color: tomato;
+  position: absolute;
+  width: 50px; height: 50px;
+  bottom: 60px;
+  right: 60px;;
+  z-index: 0}
+
+/* 隣接結合子：１つ目だけ飛ばしてCSS設定 */
+.rinsetsu-0 p + p{
+    /* border-bottom: 1px dashed silver; */
+    border-top: 1px dashed silver;
+    padding-top: 10px;}
+
+/* flexboxのflex-grow余白がある場合/shrinkはみ出る場合/basis比率計算基準 */
+.flex-box-gsb {
+  width: 300px; height: 300px;
+  flex-direction: row;
+  /* 子要素を横一列Wrap */
+  flex-wrap: wrap;
+  color: #fff; background: #eee;
+/* flexbox左右中央配置 */
+  /* justify-content:center;
+  align-items: center; */
+  display: flex;}
+.b {
+  width: 80px;height: 80px;}
+.b-1 {
+  flex: 1 1 80px; 
+  background: tomato;}
+.b-2 {
+  flex: 2 1 80px; 
+  background: slategray;}
+.b-3 {
+  flex: 3 1 80px; 
+  background: pink;}
+
+/* flex boxプラスmargin auto */
+.b-4 {
+  background: royalblue;}
+.b-5 {
+  background: limegreen;}
+.b-6 {
+  margin: auto 0 0 auto;
+  background: magenta;}
+/* .b-7 {background: yellow;} */
+
+/* flexbox左右は固定、真ん中ボックスは残りの余白調整 */
+.flex-midadj {display: flex;}
+/* grow 0 固定幅100px */
+.left-0 {
+  flex: 0 100px;
+  background: tomato;}
+.right-0 {
+  flex: 0 100px;
+  background: pink;}
+.center-0 {
+  flex: 1;
+  background: skyblue;}
+
+/* 画面サイズにあわせて変化 mediaクエリ、all andは全てのデバイスを意味 */
+@media all and (max-width: 500px) {
+  .flex-midadj {flex-direction: column;}
+  /* flex:100%は横いっぱい */
+  .center-0 {order: 1; flex: 100%;}
+  .left-0 {order: 2; flex: 100%;}
+  .right-0 {order: 3; flex: 100%;}}

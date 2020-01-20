@@ -1,0 +1,219 @@
+<!-- ---------------------------------------------------------------------------------------------------- -->
+<!-- さくらmysql -->
+<!-- ---------------------------------------------------------------------------------------------------- -->
+ssh auneeds@auneeds.com
+mzx7ssb26h
+mysql -u auneeds -h mysql57.auneeds.sakura.ne.jp -p
+12
+<mysql>
+  show databases;
+  use ???;
+  select database();
+  show tables;
+  <!-- DB属性一覧 -->
+  desc users;
+  quit
+</mysql>
+
+<!-- ---------------------------------------------------------------------------------------------------- -->
+<!-- JQuery/sha256 -->
+<!-- ---------------------------------------------------------------------------------------------------- -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/sha256.js"></script>
+
+<!-- ---------------------------------------------------------------------------------------------------- -->
+<!-- Firebase settings -->
+<!-- ---------------------------------------------------------------------------------------------------- -->
+  <!-- core Firebase JS SDK is always required and must be listed first -->
+<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
+<script src="https://www.gstatic.com/firebasejs/7.2.2/firebase.js"></script>
+  <!-- Auth -->
+<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.2.0/firebase-ui-auth.css" />
+<script src="https://www.gstatic.com/firebasejs/ui/4.2.0/firebase-ui-auth__ja.js"></script>
+
+<!-- ---------------------------------------------------------------------------------------------------- -->
+<!-- Firebase認証UI -->
+<div id="firebaseui-auth-container"></div>
+<div id="loader">Loading...</div>
+<!-- ---------------------------------------------------------------------------------------------------- -->
+
+<VSC>
+  ターミナル： comm J、インデントを閉じる： comm K then comm 0~9 段、インデントを開く：comm K then comm J
+  Emmet、ul>li*3でリスト３つ、link:cssで、script:srcでファイルとリンク
+  行の移動alt+矢印、複製shit+alt+矢印、Ctrl+Enter行挿入、Ctrl+shift+enter前行挿入
+  同じワードを１つずつ選択：Comm D、
+</VSC>
+
+<Root>
+<!-- ルートに移動 -->
+sudo su -
+</Root>
+
+<COMMAND>
+  フォルダの中身：ls、画面クリア：con L、現在のパスprint working：pwd、フォルダ作成：mkdir ?、中止：con C
+  <ajax>
+    open -a Google\ Chrome --args -allow-file-access-from-files
+  </ajax>
+</COMMAND>
+
+<Virtualserver>
+  cd myvagrant/mycentos、vagrant up、vagrant ssh、
+  php -v、mysql --version
+  cd phplogin、mkdir ???
+  php -S 192.168.33.10:8000 -t public_html/
+  exit、vagrant suspend、exit 
+</Virtualserver>
+
+<pending>
+<!-- macOS builtin php server -->
+php -S 0.0.0.0:8000
+ip a
+vagrant status
+sudo service mysqld status
+mysql -u myapp_user -p
+drop database mydb03;
+<!-- unix -->
+<!-- [vagrant@localhost ~]$、vagrantはユーザー、
+  localhostはcentosが稼働しているマシン、ネットワーク越しに他のマシンにログインすると変わる -->
+<!-- 〜チルダと呼ぶ、ホームディレクトリの略 -->
+<!-- 一般ユーザーは＄記号、管理ユーザーは＃記号 -->
+<!-- １つ上戻る、スペースが必要！ -->
+cd ..
+<!-- 直前戻る -->
+cd -
+mkdir app{1..40}
+<!-- 中身ある場合は rmdir -r -->
+rmdir 
+<!--フォルダをコピー r 再帰的recursive -->
+cp -r myapp myapp2
+<!-- 親フォルダが既存していなければ -pをつける -->
+mkdir -p myapp3/config
+<!-- 移動 -->
+mv
+
+<!-- ファイル操作 -->
+cat filepathname
+<!-- 1画面のみ表示、Ctrl＋B、Ctrl＋F、最後Shift+G、終了q-->
+less filepathname
+<!-- ドットは現在のdir -->
+cp myapp/hello.txt .
+<!-- 移動、同一dirの場合は名前の変更 -->
+mv test0.html test2.html
+rm test2.html
+<!-- やじるしで前のコマンド -->
+<!-- 元の場所に戻る -->
+cd -
+<!-- コマンドの補完、タブ２回 -->
+<!-- コマンド履歴検索 -->
+Ctrl R
+<!-- コマンド履歴 -->
+history、びっくりマーク＋番号で呼び出す
+<!-- マニュアル -->
+man
+<!-- 直前のコマンド -->
+!!
+
+
+<!-- 正規表現 -->
+meta文字をエスケープ＝バックスラッシュをつけて検索という意味、例：点「\.」、バックスラッシュ「\\」、
+
+リテラル＝そのまま検索できる、メタ文字＝そのまま検索できない
+
+点「.」任意の一文字代わり、「\s」スペース/タブ/改行、「\.」ドット、「\d」digit数字の一文字、「\w」wordアルファベット数字アンダーバー、大文字にすると例「\D」=\d以外、
+
+  <!-- アンカー   -->
+  ハット「^」先頭のみ、例：d\^、「$」末尾のみ、例：d\$、「\b」単語境界線、例：\bseki\b、「」、「」、「」、
+
+  <!-- 量子定子 -->
+  「{n}」n個、例：\d{3}=数字３つ、「{min,max}」min以上、max以下、例：\d{2,3}=数字２つ以上３つ以下「{min,}」min以上、「」、「」
+
+    「?」{0,1}、「+」 → {1,}、「*」{0,}
+      例：T03-3001-3322A、TEL0330013322、\w+\d{2}-?\d{4}-?\d{4}\w* で検索
+
+  <!-- 注意：一番短い文字だけマッチさせる -->
+  "apple", "pineapples", "apples"、「".+"」で検索するとデフォルトでは一番長い"apple", "pineapples", "apples"が選択される、「".+?"」にすれば一番短い文字列でマッチ
+</pending>
+
+<!-- UI/UX増田直生 -->
+  寛容、ミスする前の予防
+  記憶してくれる
+  やり直しができる
+  バリアフリー、色弱向け、プラグイン、エクステンション
+  Color blind version
+  タイプログラフィ
+  セリフ：ウロコ付き、明朝など、長文向け
+  サンセリフ：ゴシック、デジタル向け
+  行間、使用するフォントの１.５倍
+  行間、メッセージ、２倍
+  ピクセルパーフェクト、小数点ピクセル、例１０.３＊９.３だとじゃぎる
+  サーバーダウン情報を目立たせる
+  Material design, human interface ガイドライン
+  apple製品は８の倍数を使って構成されている
+  ６名マンガボックス、フロントLPウェブアプリ、バック、UIUX、POプロジェクトオーナー、ios、アンドロイド
+  どういうペルソナのためにサービスを作っているか、写真があった方がいい、細かい情報も
+
+<!-- インターネット概論 -->
+  乗り換え駅、ルーター
+  通過駅、ハブ
+  suica、プロトコル＝手続き
+  DNS、ドメインからIPアドレスを割り出す
+
+  <!-- sketch -->
+  ctrl R、目盛り表示
+  O、
+  C、
+
+<!-- ＜チーム＞ -->
+  UI/UX増田直生、GoodPatch
+  LP森田Mitunori Morita、
+
+  <!-- scriptが下の方に書く理由 -->
+  読み込むスピードがかかるので、先にHTMLを表示させたい
+  
+  <!-- 画像の解像度 -->
+  デバイスサイズretina display対応450かける２、９００ピクセル
+
+  <mysql>
+      cd myvagrant/mycentos、vagrant up、vagrant ssh、cd mysql
+      mysql -u root
+      mysql -u dbuser -p
+      create database simplifiedios;
+      <!-- データベース一覧表示 -->
+      show databases;
+      use ???;
+      <!-- 現在選択しているDBを表示 -->
+      select database();
+      show tables;
+      <!-- DB属性一覧 -->
+      desc users;
+      quit
+    </mysql>
+
+<!-- github -->
+git --version
+2.変更した履歴をチェックしますよー的なもの
+git log
+git add *.css //すべてのCSSファイル
+git add -n //追加されるファイルを調べる
+git add -u //変更されたファイルを追加する
+git push -u origin master
+
+<!-- Github操作まとめ -->
+git init
+git status
+git add .
+git diff
+git commit -m "チーズアカデミー"
+git remote -v
+git remote set-url origin https://github.com/datankia/auneeds.git
+git remote add origin https://github.com/datankia/auneeds.git
+git push origin HEAD
+
+<!-- ブランチ一覧 -->
+git branch -a
+git checkout -b imgattach
+git checkout master
+git merge imgattach
